@@ -1,0 +1,268 @@
+Java Questions & Answers – Serialization – 1
+This set of Java Multiple Choice Questions & Answers (MCQs) focuses on “Serialization – 1”.
+
+1. Which of these is a process of writing the state of an object to a byte stream?
+a) Serialization
+b) Externalization
+c) File Filtering
+d) All of the mentioned
+View Answer
+
+Answer: a
+Explanation: Serialization is the process of writing the state of an object to a byte stream. This is used when you want to save the state of your program to a persistent storage area.
+2. Which of these process occur automatically by the java runtime system?
+a) Serialization
+b) Garbage collection
+c) File Filtering
+d) All of the mentioned
+View Answer
+
+Answer: a
+Explanation: Serialization and deserialization occur automatically by java runtime system, Garbage collection also occur automatically but is done by CPU or the operating system not by the java runtime system.
+3. Which of these is an interface for control over serialization and deserialization?
+a) Serializable
+b) Externalization
+c) FileFilter
+d) ObjectInput
+View Answer
+
+Answer: b
+Explanation: None.
+4. Which of these interface extends DataOutput interface?
+a) Serializable
+b) Externalization
+c) ObjectOutput
+d) ObjectInput
+View Answer
+
+Answer: c
+Explanation: ObjectOutput interface extends the DataOutput interface and supports object serialization.
+5. Which of these is a method of ObjectOutput interface used to finalize the output state so that any buffers are cleared?
+a) clear()
+b) flush()
+c) fflush()
+d) close()
+View Answer
+
+Answer: b
+Explanation: None.
+6. Which of these is method of ObjectOutput interface used to write the object to input or output stream as required?
+a) write()
+b) Write()
+c) StreamWrite()
+d) writeObject()
+View Answer
+
+Answer: d
+Explanation: writeObject() is used to write an object into invoking stream, it can be input stream or output stream.
+7. What will be the output of the following Java program?
+
+    import java.io.*;
+    class serialization 
+    {
+        public static void main(String[] args) 
+        {
+            try 
+            {
+                Myclass object1 = new Myclass("Hello", -7, 2.1e10);
+	        FileOutputStream fos = new FileOutputStream("serial");
+	        ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(object1);
+                oos.flush();
+                oos.close();
+	    }
+	    catch(Exception e) 
+            {
+	        System.out.println("Serialization" + e);
+                System.exit(0);
+            }
+	    try  
+            {
+                Myclass object2;
+	        FileInputStream fis = new FileInputStream("serial");
+	        ObjectInputStream ois = new ObjectInputStream(fis);
+                object2 = (Myclass)ois.readObject();
+                ois.close();
+	        System.out.println(object2);		    	
+	    }
+	    catch (Exception e) 
+            {
+                System.out.print("deserialization" + e);
+	        System.exit(0);
+	    }
+        }
+    }
+    class Myclass implements Serializable 
+    {
+	String s;
+	int i;
+	double d;
+        Myclass (String s, int i, double d)
+        {
+	    this.d = d;
+	    this.i = i;
+	    this.s = s;
+	}
+    }
+a) s=Hello; i=-7; d=2.1E10
+b) Hello; -7; 2.1E10
+c) s; i; 2.1E10
+d) Serialization
+View Answer
+
+Answer: a
+Explanation: None.
+Output:
+$ javac serialization.java
+$ java serialization
+s=Hello; i=-7; d=2.1E10
+8. What will be the output of the following Java program?
+
+    import java.io.*;
+    class serialization 
+    {
+        public static void main(String[] args) 
+        {
+            try 
+            {
+                Myclass object1 = new Myclass("Hello", -7, 2.1e10);
+	        FileOutputStream fos = new FileOutputStream("serial");
+	        ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(object1);
+                oos.flush();
+                oos.close();
+	    }
+	    catch(Exception e) 
+            {
+	        System.out.println("Serialization" + e);
+                System.exit(0);
+            }
+	    try
+            {
+	        int x;
+	        FileInputStream fis = new FileInputStream("serial");
+	        ObjectInputStream ois = new ObjectInputStream(fis);
+                x = ois.readInt();
+                ois.close();
+	        System.out.println(x);		    	
+	    }
+	    catch (Exception e)
+            {
+                System.out.print("deserialization");
+	        System.exit(0);
+	    }
+        }
+    }
+    class Myclass implements Serializable
+    {
+	String s;
+	int i;
+	double d;
+        Myclass(String s, int i, double d)
+        {
+	    this.d = d;
+	    this.i = i;
+	    this.s = s;
+	}
+    }
+a) -7
+b) Hello
+c) 2.1E10
+d) deserialization
+View Answer
+
+Answer: d
+Explanation: x = ois.readInt(); will try to read an integer value from the stream ‘serial’ created before, since stream contains an object of Myclass hence error will occur and it will be catched by catch printing deserialization.
+Output:
+advertisement
+
+$ javac serialization.java
+$ java serialization
+deserialization
+9. What will be the output of the following Java program?
+
+    import java.io.*;
+    class Chararrayinput
+    {
+        public static void main(String[] args) 
+        {
+	    String obj  = "abcdefgh";
+            int length = obj.length();
+            char c[] = new char[length];
+            obj.getChars(0, length, c, 0);
+            CharArrayReader input1 = new CharArrayReader(c);
+            CharArrayReader input2 = new CharArrayReader(c, 1, 4);
+            int i;
+            int j;
+            try 
+            {
+		while ((i = input1.read()) == (j = input2.read()))
+                {
+                    System.out.print((char)i);
+                }
+       	    } 
+            catch (IOException e) 
+            {
+                e.printStackTrace();
+	    }
+	}
+    }
+a) abc
+b) abcd
+c) abcde
+d) None of the mentioned
+View Answer
+
+Answer: d
+Explanation: No output is printed. CharArrayReader object input1 contains string “abcdefgh” whereas object input2 contains string “bcde”, when while((i=input1.read())==(j=input2.read())) is executed the starting character of each object is compared since they are unequal control comes out of loop and nothing is printed on the screen.
+Output:
+$ javac Chararrayinput.java
+$ java Chararrayinput
+10. What will be the output of the following Java program?
+
+    import java.io.*;
+    class streams
+    {
+        public static void main(String[] args) 
+        {
+            try
+            {
+	        FileOutputStream fos = new FileOutputStream("serial");
+	        ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeFloat(3.5);
+                oos.flush();
+                oos.close();
+	    }
+	    catch(Exception e)
+            {
+	        System.out.println("Serialization" + e);
+                System.exit(0);
+            }
+	    try 
+            {
+	        float x;
+	        FileInputStream fis = new FileInputStream("serial");
+	        ObjectInputStream ois = new ObjectInputStream(fis);
+                x = ois.readInt();
+                ois.close();
+	        System.out.println(x);		    	
+	    }
+	    catch (Exception e)
+            {
+                System.out.print("deserialization");
+	        System.exit(0);
+	    }
+        }
+    }
+a) 3
+b) 3.5
+c) serialization
+d) deserialization
+View Answer
+
+Answer: b
+Explanation: oos.writeFloat(3.5); writes in output stream which is extracted by x = ois.readInt(); and stored in x hence x contains 3.5.
+Output:
+$ javac streams.java
+$ java streams
+3.5

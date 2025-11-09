@@ -1,0 +1,121 @@
+Java Questions & Answers – Networking – Server, Sockets & httpd Class
+This set of Basic Java Questions and Answers focuses on “Nnetworking – Server, Sockets & httpd Class”.
+
+1. Which of these interface abstractes the output of messages from httpd?
+a) LogMessage
+b) LogResponse
+c) Httpdserver
+d) httpdResponse
+View Answer
+
+Answer: a
+Explanation: LogMessage is a simple interface that is used to abstract the output of messages from the httpd.
+
+2. Which of these class is used to create servers that listen for either local or remote client programs?
+a) httpServer
+b) ServerSockets
+c) MimeHeader
+d) HttpResponse
+View Answer
+
+Answer: b
+Explanation: None.
+
+3. Which of these is a standard for communicating multimedia content over email?
+a) http
+b) https
+c) Mime
+d) httpd
+View Answer
+
+Answer: c
+Explanation: MIME is an internet standard for communicating multimedia content over email. The HTTP protocol uses and extends the notion of MIME headers to pass attribute pairs between HTTP client and server.
+
+4. Which of these methods is used to make raw MIME formatted string?
+a) parse()
+b) toString()
+c) getString()
+d) parseString()
+View Answer
+
+Answer: a
+Explanation: None.
+
+5. Which of these class is used for operating on request from the client to the server?
+a) http
+b) httpDecoder
+c) httpConnection
+d) httpd
+View Answer
+
+Answer: d
+Explanation: None.
+
+6. Which of these method of MimeHeader is used to return the string equivalent of the values stores on MimeHeader?
+a) string()
+b) toString()
+c) convertString()
+d) getString()
+View Answer
+
+Answer: b
+Explanation: toString() does the reverse of parse() method, it is used to return the string equivalent of the values stores on MimeHeader.
+7. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws Exception 
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            URLConnection obj1 = obj.openConnection();
+            System.out.print(obj1.getContentType());
+        }
+    }
+Note: Host URL is written in html and simple text.
+a) html
+b) text
+c) html/text
+d) text/html
+View Answer
+
+Answer: d
+Explanation: None.
+Output:
+$ javac networking.java
+$ java networking 
+text/html
+8. Which of these is an instance variable of class httpd?
+a) port
+b) cache
+c) log
+d) All of the mentioned
+View Answer
+
+Answer: d
+Explanation: There are 5 instance variables: port, docRoot, log, cache and stopFlag. All of them are private.
+9. What will be the output of the following Java program?
+
+advertisement
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws MalformedURLException 
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            System.out.print(obj.toExternalForm());
+        }
+    }
+a) sanfoundry
+b) sanfoundry.com
+c) www.sanfoundry.com
+d) https://www.sanfoundry.com/javamcq
+View Answer
+
+Answer: d
+Explanation: toExternalForm() is used to know the full URL of an URL object.
+Output:
+$ javac networking.java
+$ java networking 
+https://www.sanfoundry.com/javamcq

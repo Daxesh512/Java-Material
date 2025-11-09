@@ -1,0 +1,145 @@
+This section of our 1000+ Java MCQs focuses on networking basics of Java Programming Language.
+
+1. Which of these package contains classes and interfaces for networking?
+a) java.io
+b) java.util
+c) java.net
+d) java.network
+View Answer
+
+Answer: c
+Explanation: None.
+2. Which of these is a protocol for breaking and sending packets to an address across a network?
+a) TCP/IP
+b) DNS
+c) Socket
+d) Proxy Server
+View Answer
+
+Answer: a
+Explanation: TCP/IP – Transfer control protocol/Internet Protocol is used to break data into small packets an send them to an address across a network.
+3. How many ports of TCP/IP are reserved for specific protocols?
+a) 10
+b) 1024
+c) 2048
+d) 512
+View Answer
+
+4. How many bits are in a single IP address?
+a) 8
+b) 16
+c) 32
+d) 64
+View Answer
+
+5. Which of these is a full form of DNS?
+a) Data Network Service
+b) Data Name Service
+c) Domain Network Service
+d) Domain Name Service
+View Answer
+
+Answer: d
+Explanation: None.
+6. Which of these class is used to encapsulate IP address and DNS?
+a) DatagramPacket
+b) URL
+c) InetAddress
+d) ContentHandler
+View Answer
+
+Answer: c
+Explanation: InetAddress class encapsulate both IP address and DNS, we can interact with this class by using name of an IP host.
+7. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws UnknownHostException 
+        {
+            InetAddress obj1 = InetAddress.getByName("sanfoundry.com");
+            InetAddress obj2 = InetAddress.getByName("sanfoundry.com");
+            boolean x = obj1.equals(obj2); 
+            System.out.print(x);
+        }
+    }
+a) 0
+b) 1
+c) true
+d) false
+View Answer
+
+Answer: c
+Explanation: None.
+Output:
+$ javac networking.java
+$ java networking 
+true
+8. What will be the output of the following Java program?
+
+    import java.net.*;
+    public class networking 
+    {
+        public static void main(String[] args) throws UnknownHostException 
+        {
+            InetAddress obj1 = InetAddress.getByName("cisco.com");
+            InetAddress obj2 = InetAddress.getByName("sanfoundry.com");
+            boolean x = obj1.equals(obj2); 
+            System.out.print(x);
+        }
+    }
+a) 0
+b) 1
+c) true
+d) false
+View Answer
+
+Answer: d
+Explanation: InetAddress obj1 = InetAddress.getByName(“cisco.com”); creates object obj1 having DNS and IP address of cisco.com, InetAddress obj2 = InetAddress.getByName(“sanfoundry.com”); creates obj2 having DNS and IP address of sanfoundry.com, since both these address point to two different locations false is returned by obj1.equals(obj2);.
+Output:
+advertisement
+
+$ javac networking.java
+$ java networking 
+false
+9. What will be the output of the following Java program?
+
+import java.io.*;  
+import java.net.*;  
+public class URLDemo 
+{  
+    public static void main(String[] args) 
+    {  
+        try 
+        {  
+            URL url=new URL("https://www.sanfoundry.com/java-mcq");  
+            System.out.println("Protocol: "+url.getProtocol());  
+            System.out.println("Host Name: "+url.getHost());  
+            System.out.println("Port Number: "+url.getPort());   
+        } catch(Exception e){System.out.println(e);}  
+    }  
+}
+a) Protocol: http
+b) Host Name: www.sanfoundry.com
+c) Port Number: -1
+d) All of the mentioned
+View Answer
+
+10. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws UnknownHostException 
+        {
+            InetAddress obj1 = InetAddress.getByName("cisco.com");
+            System.out.print(obj1.getHostName());
+        }
+    }
+a) cisco
+b) cisco.com
+c) www.cisco.com
+d) none of the mentioned
+View Answer
+
+Sanfoundry Globa

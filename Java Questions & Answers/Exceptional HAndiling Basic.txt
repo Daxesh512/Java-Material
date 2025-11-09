@@ -1,0 +1,184 @@
+Java Questions & Answers – Exceptional Handling Basics
+This section of our 1000+ Java MCQs focuses on exception handling of Java Programming Language.
+
+1. When does Exceptions in Java arises in code sequence?
+a) Run Time
+b) Compilation Time
+c) Can Occur Any Time
+d) None of the mentioned
+View Answer
+
+Answer: a
+Explanation: Exceptions in Java are run-time errors.
+
+2. Which of these keywords is not a part of exception handling?
+a) try
+b) finally
+c) thrown
+d) catch
+View Answer
+
+Answer: c
+Explanation: Exceptional handling is managed via 5 keywords – try, catch, throws, throw and finally.
+
+3. Which of these keywords must be used to monitor for exceptions?
+a) try
+b) finally
+c) throw
+d) catch
+View Answer
+
+Answer: a
+Explanation: None.
+
+4. Which of these keywords must be used to handle the exception thrown by try block in some rational manner?
+a) try
+b) finally
+c) throw
+d) catch
+View Answer
+
+Answer: d
+Explanation: If an exception occurs within the try block, it is thrown and cached by catch block for processing.
+
+5. Which of these keywords is used to manually throw an exception?
+a) try
+b) finally
+c) throw
+d) catch
+View Answer
+
+Answer: c
+Explanation: None.
+
+6. What will be the output of the following Java program?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                System.out.print("Hello" + " " + 1 / 0);
+            }
+            catch(ArithmeticException e) 
+            {
+        	System.out.print("World");        	
+            }
+        }
+    }
+a) Hello
+b) World
+c) HelloWorld
+d) Hello World
+View Answer
+
+Answer: b
+Explanation: System.ou.print() function first converts the whole parameters into a string and then prints, before “Hello” goes to output stream 1 / 0 error is encountered which is cached by catch block printing just “World”.
+Output:
+$ javac exception_handling.java
+$ java exception_handling
+World
+
+7. What will be the output of the following Java program?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+           {
+                int a, b;
+                b = 0;
+                a = 5 / b;
+                System.out.print("A");
+            }
+            catch(ArithmeticException e) 
+            {
+        	System.out.print("B");        	
+            }
+        }
+    }
+a) A
+b) B
+c) Compilation Error
+d) Runtime Error
+View Answer
+
+Answer: b
+Explanation: None.
+Output:
+advertisement
+
+$ javac exception_handling.java
+$ java exception_handling
+B
+
+8. What will be the output of the following Java program?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                int a, b;
+                b = 0;
+                a = 5 / b;
+                System.out.print("A");
+            }
+            catch(ArithmeticException e) 
+            {
+        	System.out.print("B");        	
+            }
+            finally 
+            {
+    	        System.out.print("C");
+            }
+        }
+    }
+a) A
+b) B
+c) AC
+d) BC
+View Answer
+
+Answer: d
+Explanation: finally keyword is used to execute the code before try and catch block end.
+Output:
+$ javac exception_handling.java
+$ java exception_handling
+BC
+
+9. What will be the output of the following Java program?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                int i, sum;
+                sum = 10;
+                for (i = -1; i < 3 ;++i)
+                    sum = (sum / i);
+            }
+            catch(ArithmeticException e) 
+            {
+        	System.out.print("0");        	
+            } 
+            System.out.print(sum);
+        }
+    }
+a) 0
+b) 05
+c) Compilation Error
+d) Runtime Error
+View Answer
+
+Answer: c
+Explanation: Value of variable sum is printed outside of try block, sum is declared only in try block, outside try block it is undefined.
+Output:
+$ javac exception_handling.java
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	sum cannot be resolved to a variable

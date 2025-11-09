@@ -1,0 +1,158 @@
+Java Questions & Answers – Throw, Throws & Nested Try
+This section of our 1000+ Java MCQs focuses on throw, throws & nested try of Java Programming Language.
+
+1. Which of these keywords is used to generate an exception explicitly?
+a) try
+b) finally
+c) throw
+d) catch
+View Answer
+
+Answer: c
+Explanation: None.
+2. Which of these class is related to all the exceptions that are explicitly thrown?
+a) Error
+b) Exception
+c) Throwable
+d) Throw
+View Answer
+
+Answer: c
+Explanation: None.
+3. Which of these operator is used to generate an instance of an exception than can be thrown by using throw?
+a) new
+b) malloc
+c) alloc
+d) thrown
+View Answer
+
+Answer: a
+Explanation: new is used to create an instance of an exception. All of java’s built in run-time exceptions have two constructors: one with no parameters and one that takes a string parameter.
+4. Which of these keywords is used to by the calling function to guard against the exception that is thrown by called function?
+a) try
+b) throw
+c) throws
+d) catch
+View Answer
+
+Answer: c
+Explanation: If a method is capable of causing an exception that it does not handle. It must specify this behaviour the behaviour so that callers of the method can guard themselves against that exception. This is done by using throws clause in methods declaration.
+5. What will be the output of the following Java code?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                int a = args.length;
+                int b = 10 / a;
+                System.out.print(a);
+                try 
+                {
+                    if (a == 1)
+                        a = a / a - a;
+                    if (a == 2) 
+                    {
+                        int []c = {1};
+                        c[8] = 9;
+                    }
+                }
+                catch (ArrayIndexOutOfBoundException e) 
+                {
+                    System.out.println("TypeA");
+                }
+                catch (ArithmeticException e) 
+                {
+                    System.out.println("TypeB");
+                }
+            }
+        }
+    }
+a) TypeA
+b) TypeB
+c) Compile Time Error
+d) 0TypeB
+View Answer
+
+Answer: c
+Explanation: Because we can’t go beyond array limit
+6. What will be the output of the following Java code?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                System.out.print("A");
+                throw new NullPointerException ("Hello");
+            }
+            catch(ArithmeticException e) 
+            {
+                System.out.print("B");        	
+            }
+        }
+    }
+a) A
+b) B
+c) Hello
+d) Runtime Exception
+View Answer
+
+Answer: d
+Explanation: None.
+Output:
+$ javac exception_handling.java
+$ java exception_handling
+Exception in thread "main" java.lang.NullPointerException: Hello
+	at exception_handling.main
+7. What will be the output of the following Java code?
+
+advertisement
+public class San 
+ {  
+    public static void main(String[] args) 
+    {
+        try 
+        { 
+            return; 
+        } 
+        finally 
+        {
+            System.out.println( "Finally" ); 
+        } 
+    } 
+}
+a) Finally
+b) Compilation fails
+c) The code runs with no output
+d) An exception is thrown at runtime
+View Answer
+
+Answer: a
+Explanation: Because finally will execute always.
+8. What will be the output of the following Java code?
+
+public class San 
+{
+    public static void main(String args[])
+    {
+        try 
+        {
+            System.out.print("Hello world ");
+        }
+        finally 
+        {
+            System.out.println("Finally executing ");
+        }
+    }
+}
+a) The program will not compile because no exceptions are specified
+b) The program will not compile because no catch clauses are specified
+c) Hello world
+d) Hello world Finally executing
+View Answer
+
+Answer: d
+Explanation: None

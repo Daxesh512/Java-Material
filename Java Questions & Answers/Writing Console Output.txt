@@ -1,0 +1,139 @@
+Java Questions & Answers – Writing Console Output
+This section of our 1000+ Java MCQs focuses on writing console outputs in Java Programming Language.
+
+1. Which of these class contains the methods print() & println()?
+a) System
+b) System.out
+c) BUfferedOutputStream
+d) PrintStream
+View Answer
+
+Answer: d
+Explanation: print() and println() are defined under the class PrintStream, System.out is the byte stream used by these methods .
+
+2. Which of these methods can be used to writing console output?
+a) print()
+b) println()
+c) write()
+d) all of the mentioned
+View Answer
+
+Answer: d
+Explanation: None.
+
+3. Which of these classes are used by character streams output operations?
+a) InputStream
+b) Writer
+c) ReadStream
+d) InputOutputStream
+View Answer
+
+Answer: b
+Explanation: Character streams uses Writer and Reader classes for input & output operations.
+
+4. Which of these class is used to read from a file?
+a) InputStream
+b) BufferedInputStream
+c) FileInputStream
+d) BufferedFileInputStream
+View Answer
+
+Answer: c
+Explanation: None.
+
+5. What will be the output of the following Java program?
+
+    class output
+    {
+        public static void main(String args[])
+        {
+            String a="hello i love java";
+            System.out.println(indexof('i')+" "+indexof('o')+" "+lastIndexof('i')+" "+lastIndexof('o') ));
+        }
+    }
+a) 6 4 6 9
+b) 5 4 5 9
+c) 7 8 8 9
+d) 4 3 6 9
+View Answer
+
+Answer: a
+Explanation: indexof(‘c’) and lastIndexof(‘c’) are pre defined function which are used to get the index of first and last occurrence of
+the character pointed by c in the given array.
+Output:
+$ javac output.java
+$ java output
+6 4 6 9
+6. What will be the output of the following Java program?
+
+    class output
+    {
+        public static void main(String args[])
+        {
+            char c[]={'a','1','b',' ','A','0'];
+            for (int i = 0; i < 5; ++i)
+            {
+	        if(Character.isDigit(c[i]))
+                    System.out.println(c[i]" is a digit");
+                if(Character.isWhitespace(c[i]))
+                   System.out.println(c[i]" is a Whitespace character");
+                if(Character.isUpperCase(c[i]))
+                   System.out.println(c[i]" is an Upper case Letter");
+                if(Character.isUpperCase(c[i]))
+                   System.out.println(c[i]" is a lower case Letter");
+                i = i + 3;
+            }
+        }
+    }
+a)
+
+   a is a lower case Letter
+     is White space character
+b)
+
+   b is a lower case Letter
+     is White space characte
+advertisement
+
+c)
+
+   a is a lower case Letter
+   A is a upper case Letter
+d)
+
+   a is a lower case Letter
+   0 is a digit
+View Answer
+Answer: a
+Explanation: Character.isDigit(c[i]),Character.isUpperCase(c[i]),Character.isWhitespace(c[i]) are the function of library java.lang
+they are used to find weather the given character is of specified type or not. They return true or false i:e Boolean variable.
+Output:
+$ javac output.java
+$ java output  
+a is a lower case Letter
+  is White space character
+ 
+ 
+7. What will be the output of the following Java program?
+
+    class output
+    {
+        public static void main(String args[])
+        { 
+           StringBuffer s1 = new StringBuffer("Hello");
+           StringBuffer s2 = s1.reverse();
+           System.out.println(s2);
+        }
+    }
+a) Hello
+b) olleH
+c) HelloolleH
+d) olleHHello
+View Answer
+
+Answer: b
+Explanation: reverse() method reverses all characters. It returns the reversed object on which it was called.
+Output:
+$ javac output.java
+$ java output
+olleH

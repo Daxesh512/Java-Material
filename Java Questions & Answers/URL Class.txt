@@ -1,0 +1,145 @@
+ava Questions & Answers – URL Class
+This set of Java Multiple Choice Questions & Answers (MCQs) focuses on “URL Class”.
+
+1. What does URL stands for?
+a) Uniform Resource Locator
+b) Uniform Resource Latch
+c) Universal Resource Locator
+d) Universal Resource Latch
+View Answer
+
+Answer: a
+Explanation: URL is Uniform Resource Locator.
+
+2. Which of these exceptions is thrown by URL class’s constructors?
+a) URLNotFound
+b) URLSourceNotFound
+c) MalformedURLException
+d) URLNotFoundException
+View Answer
+
+Answer: c
+Explanation: None
+
+3. Which of these methods is used to know host of an URL?
+a) host()
+b) getHost()
+c) GetHost()
+d) gethost()
+View Answer
+
+Answer: b
+Explanation: None.
+
+4. Which of these methods is used to know the full URL of an URL object?
+a) fullHost()
+b) getHost()
+c) ExternalForm()
+d) toExternalForm()
+View Answer
+
+Answer: d
+Explanation: None.
+
+5. Which of these class is used to access actual bits or content information of a URL?
+a) URL
+b) URLDecoder
+c) URLConnection
+d) All of the mentioned
+View Answer
+
+Answer: d
+Explanation: URL, URLDecoder and URLConnection all there are used to access information stored in a URL.
+
+6. What will be the output of the following Java code?
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws MalformedURLException 
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            System.out.print(obj.getProtocol());
+        }
+    }
+a) http
+b) https
+c) www
+d) com
+View Answer
+
+Answer: a
+Explanation: obj.getProtocol() is used to know the protocol used by the host. http stands for hypertext transfer protocol, usually 2 types of protocols are used http and https, where s in https stands for secured.
+Output:
+$ javac networking.java
+$ java networking 
+http
+
+7. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking 
+    {
+        public static void main(String[] args) throws MalformedURLException 
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            System.out.print(obj.getPort());
+        }
+    }
+a) 1
+b) 0
+c) -1
+d) garbage value
+View Answer
+
+Answer: c
+Explanation: Since we have not explicitly set the port default value that is -1 is printed.
+Output:
+
+8. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking
+    {
+        public static void main(String[] args) throws MalformedURLException 
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            System.out.print(obj.getHost());
+        }
+    }
+a) sanfoundry
+b) sanfoundry.com
+c) www.sanfoundry.com
+d) https://www.sanfoundry.com/javamcq
+View Answer
+
+Answer: c
+Explanation: None.
+Output:
+$ javac networking.java
+$ java networking 
+www.sanfoundry.com
+
+9. What will be the output of the following Java program?
+
+    import java.net.*;
+    class networking
+    {
+        public static void main(String[] args) throws MalformedURLException
+        {
+            URL obj = new URL("https://www.sanfoundry.com/javamcq");
+            System.out.print(obj.toExternalForm());
+        }
+    }
+a) sanfoundry
+b) sanfoundry.com
+c) www.sanfoundry.com
+d) https://www.sanfoundry.com/javamcq
+View Answer
+
+Answer: d
+Explanation: toExternalForm() is used to know the full URL of an URL object.
+Output:
+$ javac networking.java
+$ java networking 
+https://www.sanfoundry.com/javamcq

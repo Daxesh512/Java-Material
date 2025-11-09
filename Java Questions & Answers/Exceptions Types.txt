@@ -1,0 +1,113 @@
+Java Questions & Answers – Exceptions Types
+This section of our 1000+ Java MCQs focuses on Exceptions types in Java Programming Language.
+
+1. Which of these is a super class of all exceptional type classes?
+a) String
+b) RuntimeExceptions
+c) Throwable
+d) Cacheable
+View Answer
+
+Answer: c
+Explanation: All the exception types are subclasses of the built in class Throwable.
+2. Which of these class is related to all the exceptions that can be caught by using catch?
+a) Error
+b) Exception
+c) RuntimeExecption
+d) All of the mentioned
+View Answer
+
+Answer: b
+Explanation: Error class is related to java run time error that can’t be caught usually, RuntimeExecption is subclass of Exception class which contains all the exceptions that can be caught.
+3. Which of these class is related to all the exceptions that cannot be caught?
+a) Error
+b) Exception
+c) RuntimeExecption
+d) All of the mentioned
+View Answer
+
+Answer: a
+Explanation: Error class is related to java run time error that can’t be caught usually, RuntimeExecption is subclass of Exception class which contains all the exceptions that can be caught.
+4. Which of these handles the exception when no catch is used?
+a) Default handler
+b) finally
+c) throw handler
+d) Java run time system
+View Answer
+
+Answer: a
+Explanation: None.
+5. What exception thrown by parseInt() method?
+a) ArithmeticException
+b) ClassNotFoundException
+c) NullPointerException
+d) NumberFormatException
+View Answer
+
+Answer: d
+Explanation: parseInt() method parses input into integer. The exception thrown by this method is NumberFormatException.
+6. What will be the output of the following Java code?
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                System.out.print("Hello" + " " + 1 / 0);
+            }
+            finally 
+            {
+        	System.out.print("World");        	
+            }
+        }
+    }
+a) Hello
+b) World
+c) Compilation Error
+d) First Exception then World
+View Answer
+
+Answer: d
+Explanation: None.
+Output:
+$ javac exception_handling.java
+$ java exception_handling
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+World
+7. What will be the output of the following Java code?
+
+advertisement
+
+    class exception_handling 
+    {
+        public static void main(String args[]) 
+        {
+            try 
+            {
+                int i, sum;
+                sum = 10;
+                for (i = -1; i < 3 ;++i) 
+                {
+                    sum = (sum / i);
+                System.out.print(i);
+                }
+            }
+            catch(ArithmeticException e) 
+            {     	
+                System.out.print("0");
+            }
+        }
+    }
+a) -1
+b) 0
+c) -10
+d) -101
+View Answer
+
+Answer: c
+Explanation: For the 1st iteration -1 is displayed. The 2nd exception is caught in catch block and 0 is displayed.
+Output:
+$ javac exception_handling.java
+$ java exception_handling
+-10
